@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 def calculate_half_life(k):
     """
-    Calculate half_life from elimination rate constant.
+    Calculate half-life from elimination rate constant.
     """
     if k <= 0:
         raise ValueError("Elimination rate constant must be greater than zero")
@@ -17,7 +17,7 @@ def calculate_half_life(k):
 
 def calculate_elimination_rate_constant(half_life):
     """
-    Calculate the elimination rate constant from half_life.
+    Calculate the elimination rate constant from half-life.
     """
     if half_life <= 0:
         raise ValueError("Half-life must be greater than zero")
@@ -74,9 +74,9 @@ def main():
                 print(f"Error: {e}")
         elif choice == "2":
             try:
-                half_life = float(input("Enter half_life (hours): "))
+                half_life = float(input("Enter half-life (hours): "))
                 k = calculate_elimination_rate_constant(half_life)
-                print(f"Elimination rate constant (k): {k:.4f} hour^-1  ")
+                print(f"Elimination rate constant (k): {k:.4f} hour^-1 ")
             except ValueError as e:
                 print(f"Error: {e}")
         elif choice == "3":
@@ -95,7 +95,7 @@ def main():
                 k = float(input("Enter elimination rate constant (k): "))
                 total_time = float(input("Enter total time (hours): "))
                 if total_time < 0:
-                    raise  ValueError("Total time cannot be negative.")
+                    raise ValueError("Total time cannot be negative.")
                 times = np.arange(0, total_time + 1, 1)
                 concentrations = calculate_concentration_over_time(initial_concentration, k, times)
                 plt.plot(times, concentrations)
