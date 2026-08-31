@@ -40,7 +40,7 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculate_concentration(100, 2, -5)
 
-    def test_calculate_concetration_over_time(self):
+    def test_calculate_concentration_over_time(self):
         times = [0, 1, 2]
 
         result = calculate_concentration_over_time(100, 0.2, times)
