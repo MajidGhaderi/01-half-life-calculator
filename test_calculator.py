@@ -40,6 +40,10 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculate_concentration(-100, 0.2, 5)
 
+    def test_concentration_zero_initial_concentration(self):
+        with self.assertRaises(ValueError):
+            calculate_concentration(0, 0.2, 5)
+
     def test_concentration_invalid_k(self):
         with self.assertRaises(ValueError):
             calculate_concentration(100, -0.2, 5)
