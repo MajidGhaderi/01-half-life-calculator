@@ -53,6 +53,10 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculate_concentration(100, -0.2, 5)
 
+    def test_concentration_zero_k(self):
+        with self.assertRaises(ValueError):
+            calculate_concentration(100, 0, 5)
+
     def test_concentration_negative_time(self):
         with self.assertRaises(ValueError):
             calculate_concentration(100, 2, -5)
