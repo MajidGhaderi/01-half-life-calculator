@@ -64,7 +64,8 @@ def main():
         print("2 - Calculate Elimination Rate Constant")
         print("3 - Calculate Drug Concentration")
         print("4 - Plot Concentration-Time Profile")
-        print("5 - Exit")
+        print("5 - Plot Semi-log Concentration-Time Profile")
+        print("6 - Exit")
         choice = input("Choose an option: ")
         if choice == "1":
             try:
@@ -109,6 +110,29 @@ def main():
             except ValueError as e:
                 print(f"Error: {e}")
         elif choice == "5":
+            try:
+                initial_concentration = float(input("Enter initial concentration: "))
+                k = float(input("Enter elimination rate constant (k): "))
+                total_time = float(input("Enter total time (hours): "))
+
+                if total_time < 0:
+                    raise ValueError("Total time cannot be negative.")
+
+                times = np.arange(0, total_time + 1, 1)
+                concentrations = calculate_concentration_over_time(
+                    initial_concentration, k, times
+                )
+
+                plt.semilogy(times, concentrations)
+                plt.xlabel("Time (hours)")
+                plt.ylabel("Drug concentration (log scale)")
+                plt.title("Semi-log Concentration-Time Profile")
+                plt.grid(True)
+                plt.show()
+
+            except ValueError as e:
+                print(f"Error: {e}")
+        elif choice == "6":
             print("Exit Pharmacokinetics Calculator ...")
             break
         else:
