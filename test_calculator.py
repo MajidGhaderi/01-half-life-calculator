@@ -14,6 +14,10 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculate_half_life(-0.2)
 
+    def test_half_life_zero_k(self):
+        with self.assertRaises(ValueError):
+            calculate_half_life(0)
+
     def test_calculate_elimination_rate_constant(self):
         result = calculate_elimination_rate_constant(4)
 
