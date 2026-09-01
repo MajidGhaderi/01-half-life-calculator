@@ -11,6 +11,7 @@ This project calculates drug half-life, elimination rate constant, and drug conc
 * Calculate drug concentration at a specific time using first-order elimination.
 * Calculate drug concentration at multiple time points.
 * Plot a concentration-time profile.
+* Plot a semi-log concentration-time profile.
 * Validate inputs and handle invalid values using clear error messages.
 
 ## Pharmacokinetic Equations
@@ -52,6 +53,10 @@ where:
 * $C_0$ = initial drug concentration
 * $k$ = elimination rate constant
 * $t$ = time (hours)
+
+### Semi-log Concentration-Time Profile
+
+The calculator also provides a semi-log concentration-time plot with a linear time axis and a logarithmic concentration axis. This type of plot is useful for visualizing first-order drug elimination.
 
 ## Installation
 
@@ -95,7 +100,8 @@ The application provides the following options:
 2. Calculate Elimination Rate Constant
 3. Calculate Drug Concentration
 4. Plot Concentration-Time Profile
-5. Exit
+5. Plot Semi-log Concentration-Time Profile
+6. Exit
 
 Enter the required pharmacokinetic parameters when prompted by the program.
 
