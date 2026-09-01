@@ -1,0 +1,136 @@
+# Pharmacokinetics Calculator
+
+A simple Python-based pharmacokinetics calculator for first-order drug elimination.
+
+This project calculates drug half-life, elimination rate constant, and drug concentration over time. It also generates a concentration-time profile.
+
+## Features
+
+* Calculate drug half-life from the elimination rate constant.
+* Calculate the elimination rate constant from drug half-life.
+* Calculate drug concentration at a specific time using first-order elimination.
+* Calculate drug concentration at multiple time points.
+* Plot a concentration-time profile.
+* Validate inputs and handle invalid values using clear error messages.
+
+## Pharmacokinetic Equations
+
+The calculator uses first-order elimination equations to calculate pharmacokinetic parameters and drug concentration over time.
+
+### Half-life
+
+The elimination half-life is calculated from the elimination rate constant using the natural logarithm of 2:
+
+$$
+t_{1/2} = \frac{\ln(2)}{k}
+$$
+
+where:
+
+* $t_{1/2}$ = elimination half-life (hours)
+* $k$ = elimination rate constant (hour$^{-1}$)
+
+### Elimination Rate Constant
+
+The elimination rate constant can also be calculated from the half-life:
+
+$$
+k = \frac{\ln(2)}{t_{1/2}}
+$$
+
+### Drug Concentration
+
+For first-order elimination, drug concentration at a specific time is calculated as:
+
+$$
+C(t) = C_0 e^{-kt}
+$$
+
+where:
+
+* $C(t)$ = drug concentration at time $t$
+* $C_0$ = initial drug concentration
+* $k$ = elimination rate constant
+* $t$ = time (hours)
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd 01-half-life-calculator
+```
+
+### 2. Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+### 3. Activate the virtual environment
+
+On Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+### 4. Install dependencies
+
+```bash
+pip install numpy matplotlib
+```
+## Usage
+
+Run the calculator with:
+
+```bash
+python calculator.py
+```
+
+The application provides the following options:
+
+1. Calculate Half-life
+2. Calculate Elimination Rate Constant
+3. Calculate Drug Concentration
+4. Plot Concentration-Time Profile
+5. Exit
+
+Enter the required pharmacokinetic parameters when prompted by the program.
+
+## Running Tests
+
+Run the test suite with:
+
+```bash
+python test_calculator.py
+```
+
+The test suite covers:
+
+* Half-life calculations
+* Elimination rate constant calculations
+* Drug concentration calculations
+* Concentration calculations at multiple time points
+* Invalid input handling
+
+## Project Structure
+
+```text
+01-half-life-calculator/
+│
+├── calculator.py          # Main application and pharmacokinetic calculations
+├── test_calculator.py     # Unit tests
+├── README.md              # Project documentation
+└── .gitignore             # Git ignore rules
+```
+
+## Technologies
+
+* Python
+* NumPy
+* Matplotlib
+* unittest
+* Git
+
