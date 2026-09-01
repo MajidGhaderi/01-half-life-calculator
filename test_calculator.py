@@ -27,6 +27,10 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             calculate_elimination_rate_constant(-4)
 
+    def test_elimination_rate_constant_zero_half_life(self):
+        with self.assertRaises(ValueError):
+            calculate_elimination_rate_constant(0)
+
     def test_calculate_concentration(self):
         result = calculate_concentration(100, 0.2, 5)
 
