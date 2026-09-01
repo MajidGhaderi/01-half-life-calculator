@@ -53,7 +53,8 @@ def calculate_concentration_over_time(initial_concentration, k, times):
         concentrations.append(concentration)
 
     return concentrations
-    
+
+
 def main():
     while True:
         print("-" * 40)
@@ -85,8 +86,7 @@ def main():
                 k = float(input("Enter elimination rate constant (k): "))
                 time = float(input("Enter time (hours): "))
                 concentration = calculate_concentration(initial_concentration, k, time)
-                print(f"Drug concentration at {time} hours: "
-                    f"{concentration:.2f}")
+                print(f"Drug concentration at {time} hours: " f"{concentration:.2f}")
             except ValueError as e:
                 print(f"Error: {e}")
         elif choice == "4":
@@ -97,7 +97,9 @@ def main():
                 if total_time < 0:
                     raise ValueError("Total time cannot be negative.")
                 times = np.arange(0, total_time + 1, 1)
-                concentrations = calculate_concentration_over_time(initial_concentration, k, times)
+                concentrations = calculate_concentration_over_time(
+                    initial_concentration, k, times
+                )
                 plt.plot(times, concentrations)
                 plt.xlabel("Time (hours)")
                 plt.ylabel("Drug concentration")
@@ -111,12 +113,7 @@ def main():
             break
         else:
             print("Invalid option. Please choose between 1 and 5.")
+
+
 if __name__ == "__main__":
     main()
-
-
-        
-
-
-
-
