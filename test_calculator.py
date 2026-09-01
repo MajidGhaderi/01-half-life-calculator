@@ -36,6 +36,11 @@ class TestCalculator(unittest.TestCase):
 
         self.assertAlmostEqual(result, 36.7879, places=4)
 
+    def test_concentration_at_zero_time(self):
+        result = calculate_concentration(100, 0.2, 0)
+
+        self.assertAlmostEqual(result, 100, places=2)
+
     def test_concentration_invalid_initial_concentration(self):
         with self.assertRaises(ValueError):
             calculate_concentration(-100, 0.2, 5)
