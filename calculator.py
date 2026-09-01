@@ -136,7 +136,7 @@ def main():
             print("Exit Pharmacokinetics Calculator ...")
             break
         else:
-            print("Invalid option. Please choose between 1 and 5.")
+            print("Invalid option. Please choose between 1 and 6.")
 
 
 if __name__ == "__main__":
